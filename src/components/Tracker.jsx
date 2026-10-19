@@ -1,0 +1,1 @@
+import{useEffect}from'react';import{createTracker}from'../services/tracker';export default function Tracker({enabled,meta}){useEffect(()=>{if(!enabled)return;return createTracker(meta)},[enabled,meta?.userType,meta?.botType,meta?.sessionSource,meta?.sessionId]);return null}
