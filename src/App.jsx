@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useState}from'react';import{Activity,Shield,Users,MousePointer2,ChartNoAxesCombined,Download,Settings,Play,Code2,Database,ChevronRight,RefreshCw,FileDown,Radio,CheckCircle2,AlertTriangle,Terminal,ExternalLink}from'lucide-react';import{ResponsiveContainer,BarChart,Bar,XAxis,YAxis,Tooltip,PieChart,Pie,Cell,CartesianGrid}from'recharts';import JSZip from'jszip';import Tracker from'./components/Tracker';import{getEvents,getSessions,clearEvents,exportCsv,getGasUrl,setGasUrl}from'./services/api';import{generateSeleniumScript}from'./services/generator';
-const initial={name:'Research Bot',botType:'FastBot',targetUrl:'http://localhost:5173',delayMs:500,loopCount:1,botCount:5,paths:'/\n/products\n/contact',headless:false};
+const initial={name:'Research Bot',botType:'FastBot',targetUrl:'https://botprint.netlify.app/',delayMs:500,loopCount:1,botCount:5,paths:'/\n/products\n/contact',headless:false};
 const nav=[['overview','Overview',Activity],['human','Human collection',Users],['generator','Bot generator',Terminal],['dataset','Dataset explorer',Database],['settings','Settings',Settings]];
 const fmt=n=>new Intl.NumberFormat().format(n);const types=['mousemove','click','scroll','keypress','navigation'];
 function Card({children,className=''}){return <div className={'card '+className}>{children}</div>}
