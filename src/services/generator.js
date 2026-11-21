@@ -55,8 +55,10 @@ def workflow(d,bid):
             if not checkbox.is_selected(): checkbox.click()
         except Exception: pass
         # Scrolling and pointer movement generate the same tracker events as human sessions.
-        for _ in range(4):
-            d.execute_script('window.scrollBy({top:arguments[0],behavior:"instant"})',random.choice([140,220,-80])); pause()
+        # Walk through the taller research form in several smaller steps so
+        # scroll distance, direction changes, and pauses are represented.
+        for _ in range(12):
+            d.execute_script('window.scrollBy({top:arguments[0],behavior:"instant"})',random.choice([110,140,180,220,-60,-90])); pause()
         set_context(d,bid)
         form.find_element(By.CSS_SELECTOR,'button[type="submit"]').click(); pause()
         print(bid,'demo form interaction completed')
